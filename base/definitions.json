@@ -1,0 +1,89 @@
+{ 
+    "$schema": "http://json-schema.org/draft/2019-09/schema#",
+    "$id": "https://raw.githubusercontent.com/attestify/schema/draft-0-0-1/base/definitions.json#",
+    "type": "object",
+    "title": "Attestify - Base Schema Definitions",
+    "description": "The fundamental building blocks of the Attestify automated governance schema.",
+    "$defs": {
+        "base": { 
+            "api-version" : { 
+                "description": "The attestation schema version.",
+                "title": "API Version",
+                "type": "string",
+                "minLength": 1,
+                "additionalProperties": false
+            },
+            "api-kind": { 
+                "description": "Describes the api kind for the attestation schema.",
+                "title": "API Kind",
+                "type": "string",
+                "minLength": 1,
+                "additionalProperties": false
+            },
+            "metadata": { 
+                "description": "A dynamic set of data which provides context the attestation.",
+                "title": "Attestation Data",
+                "type": "object",
+                "additionalProperties": {
+                    "type": "string"
+                    
+                }
+            }
+        },
+        "workflow": { 
+            "description": "The workflow process and it's corresponding attestable data.",
+            "title": "Workflow",
+            "type": "object",
+            "additionalProperties": {
+                "type": "object",
+                "$ref" : "#/definitions/attestation/workflow-step"
+            }
+        },
+        "workflow-step": {
+            "description": "Data pertaining to a specific workflow step.",
+            "$id": "#/definitions/attestation/workflow-step",
+            "title": "Workflow Step",
+            "type": "object",
+            "properties" : { 
+                "name": {
+                    "description": "A human-readable name for the workflow step.",
+                    "tile": "Workflow Step Name",
+                    "type": "string",
+                    "minLength": 1
+                },
+                "software": { 
+                    "description": "The software service or tool used for this workflow step.",
+                    "tile": "Workflow Step Software",
+                    "type": "string",
+                    "minLength": 1
+                },
+                "attestations": { 
+                    "description": "The collection of attestations for an individual workflow step",
+                    "title": "Workflow Step Attestations",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": ["string","integer","number"]
+                    }
+                },
+                "additionalProperties": false
+            },
+            "required": [ "name", "software", "attestations" ]
+        },
+        "body-of-evidence": { 
+            "description": "A url to the aggregated body of evidence which supports the workflow attestations",
+            "title": "Body Of Evidence",
+            "type": "string",
+            "format": "uri", 
+            "pattern": "^https?://"
+        }
+    },
+    "properties": {
+        "apiVersion": { "$ref": "#/$defs/base/api-version"},
+        "kind": { "$ref": "#/$defs/base/api-kind"},
+        "metadata": { "$ref": "#/$defs/base/metadata"},
+        "workflow": { "$ref": "#/$defs/workflow"},
+        "boe":  { "$ref": "#/$defs/body-of-evidence"},
+        "additionalProperties": false
+    },
+      "required": ["apiVersion","kind","metadata","workflow","boe"]
+}
