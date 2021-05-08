@@ -16,6 +16,8 @@
       "kind": {
         "const": "Attestation"
       },
-      "action": {"$ref": "https://raw.githubusercontent.com/attestify/schema/draft-0-0-1/definitions/governance.json#/$defs/governance/action"}
+      "action": {"$ref": "https://raw.githubusercontent.com/attestify/schema/draft-0-0-1/definitions/governance.json#/$defs/governance/action"},
+      "actor": {"$ref": "https://raw.githubusercontent.com/attestify/schema/draft-0-0-1/definitions/governance.json#/$defs/governance/actor"},
+      "evidence": {"$ref": "https://raw.githubusercontent.com/attestify/schema/draft-0-0-1/definitions/governance.json#/$defs/governance/evidence"}
     }
   }
