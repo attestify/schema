@@ -5,12 +5,12 @@
     "title": "Attestation schmea definition",
     "description": "The fundamental building blocks of the Attestify automated governance schema.",
     "allOf": [
-        { "$ref": "https://raw.githubusercontent.com/attestify/schema/draft-0-0-1/base/definitions.json" }
+        { "$ref": "https://raw.githubusercontent.com/attestify/schema/draft-0-0-1/defintions/base-template.json" }
     ],
     "properties": {
         "apiVersion": { "$ref": "#/$defs/base/api-version"},
         "kind": { "const": "Attestation" },
         "metadata": { "$ref": "#/$defs/base/metadata"}
     },
-      "required": ["apiVersion","kind","metadata"]
+    "required": ["apiVersion","kind","metadata"]
 }
