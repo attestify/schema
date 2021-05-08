@@ -29,61 +29,12 @@
                     
                 }
             }
-        },
-        "workflow": { 
-            "description": "The workflow process and it's corresponding attestable data.",
-            "title": "Workflow",
-            "type": "object",
-            "additionalProperties": {
-                "type": "object",
-                "$ref" : "#/definitions/attestation/workflow-step"
-            }
-        },
-        "workflow-step": {
-            "description": "Data pertaining to a specific workflow step.",
-            "$id": "#/definitions/attestation/workflow-step",
-            "title": "Workflow Step",
-            "type": "object",
-            "properties" : { 
-                "name": {
-                    "description": "A human-readable name for the workflow step.",
-                    "tile": "Workflow Step Name",
-                    "type": "string",
-                    "minLength": 1
-                },
-                "software": { 
-                    "description": "The software service or tool used for this workflow step.",
-                    "tile": "Workflow Step Software",
-                    "type": "string",
-                    "minLength": 1
-                },
-                "attestations": { 
-                    "description": "The collection of attestations for an individual workflow step",
-                    "title": "Workflow Step Attestations",
-                    "type": "object",
-                    "additionalProperties": {
-                        "type": ["string","integer","number"]
-                    }
-                },
-                "additionalProperties": false
-            },
-            "required": [ "name", "software", "attestations" ]
-        },
-        "body-of-evidence": { 
-            "description": "A url to the aggregated body of evidence which supports the workflow attestations",
-            "title": "Body Of Evidence",
-            "type": "string",
-            "format": "uri", 
-            "pattern": "^https?://"
         }
     },
     "properties": {
         "apiVersion": { "$ref": "#/$defs/base/api-version"},
         "kind": { "$ref": "#/$defs/base/api-kind"},
-        "metadata": { "$ref": "#/$defs/base/metadata"},
-        "workflow": { "$ref": "#/$defs/workflow"},
-        "boe":  { "$ref": "#/$defs/body-of-evidence"},
-        "additionalProperties": false
+        "metadata": { "$ref": "#/$defs/base/metadata"}
     },
-      "required": ["apiVersion","kind","metadata","workflow","boe"]
+      "required": ["apiVersion","kind","metadata"]
 }
