@@ -1,6 +1,6 @@
 { 
     "$schema": "http://json-schema.org/draft/2019-09/schema#",
-    "$id": "https://raw.githubusercontent.com/attestify/schema/draft-0-0-1/governance/attestation.json#",
+    "$id": "https://raw.githubusercontent.com/attestify/schema/draft-0-0-1/governance-artifacts/attestation.json#",
     "type": "object",
     "title": "Attestation schmea definition",
     "description": "The fundamental building blocks of the Attestify automated governance schema.",

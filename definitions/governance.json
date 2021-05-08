@@ -1,0 +1,38 @@
+{ 
+    "$schema": "http://json-schema.org/draft/2019-09/schema#",
+    "$id": "https://raw.githubusercontent.com/attestify/schema/draft-0-0-1/definitions/governance.json#",
+    "type": "object",
+    "title": "Attestify - Governance Schema Definitions",
+    "description": "The fundamental building blocks of the Attestify automated governance schema.",
+    "$defs": {
+        "governance": { 
+            "actor" : { 
+                "description": "The person or system that performs a governance action.",
+                "title": "Actor",
+                "type": "string",
+                "minLength": 1
+            },
+            "action": { 
+                "description": "An analysis, scan, or other effort which evaluates a software artifact.",
+                "title": "Action",
+                "type": "string",
+                "minLenth": 1
+            },
+            "evidence": { 
+                "description": "An object which serializes evidence collected based on an action.",
+                "title": "Evidence",
+                "type": "object",
+                "additionalProperties": {
+                    "type": ["string","integer","number"]
+                }
+            },
+            "body-of-evidence": { 
+                "description": "A URL which contains artifacts that evidnce is based upon.",
+                "title": "Body Of Evidence",
+                "type": "string",
+                "format": "uri", 
+                "pattern": "^https?://"
+            }
+        }
+    }
+}
