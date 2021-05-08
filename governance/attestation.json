@@ -1,0 +1,16 @@
+{ 
+    "$schema": "http://json-schema.org/draft/2019-09/schema#",
+    "$id": "https://raw.githubusercontent.com/attestify/schema/draft-0-0-1/governance/attestation.json#",
+    "type": "object",
+    "title": "Attestation schmea definition",
+    "description": "The fundamental building blocks of the Attestify automated governance schema.",
+    "allOf": [
+        { "$ref": "https://raw.githubusercontent.com/attestify/schema/draft-0-0-1/base/definitions.json" }
+    ],
+    "properties": {
+        "apiVersion": { "$ref": "#/$defs/base/api-version"},
+        "kind": { "const": "Attestation" },
+        "metadata": { "$ref": "#/$defs/base/metadata"}
+    },
+      "required": ["apiVersion","kind","metadata"]
+}
