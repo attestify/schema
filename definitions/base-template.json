@@ -1,6 +1,6 @@
 { 
     "$schema": "http://json-schema.org/draft/2019-09/schema#",
-    "$id": "https://raw.githubusercontent.com/attestify/schema/draft-0-0-1/defintions/base-template.json#",
+    "$id": "https://raw.githubusercontent.com/attestify/schema/draft-0-0-1/definitions/base-template.json#",
     "type": "object",
     "title": "Attestify - Base Template",
     "description": "The fundamental building blocks of the Attestify automated governance schema.",
