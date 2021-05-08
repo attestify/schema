@@ -22,7 +22,7 @@
             "title": "Evidence",
             "type": "object",
             "additionalProperties": {
-                "type": ["string","integer","number"]
+                "type": ["string","integer","number","boolean"]
             }
         },
         "body-of-evidence": { 
