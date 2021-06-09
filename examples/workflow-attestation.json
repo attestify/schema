@@ -1,6 +1,6 @@
 {
     "apiVersion" : "continuous-integration/1.0.0",
-    "kind": "Workflow Attestation",
+    "kind": "Workflow Evidence",
     "metadata": { 
         "repository": "source-code-repo-name",
         "branch": "source-code-branch",
